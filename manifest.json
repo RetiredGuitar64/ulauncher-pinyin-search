@@ -2,7 +2,7 @@
   "required_api_version": "2",
   "name": "Pinyin File Search",
   "description": "Fast fuzzy file search by English, Chinese, full pinyin, or pinyin initials",
-  "developer_name": "Xuan",
+  "developer_name": "RetiredGuitar64",
   "icon": "images/icon.png",
   "options": {
     "query_debounce": 0.08
