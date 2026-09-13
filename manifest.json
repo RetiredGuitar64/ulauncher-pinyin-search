@@ -1,0 +1,106 @@
+{
+  "required_api_version": "2",
+  "name": "Pinyin File Search",
+  "description": "Fast fuzzy file search by English, Chinese, full pinyin, or pinyin initials",
+  "developer_name": "Xuan",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.08
+  },
+  "preferences": [
+    {
+      "id": "search_kw",
+      "type": "keyword",
+      "name": "Pinyin File Search",
+      "description": "Type the keyword, a space, then a filename or pinyin",
+      "default_value": "f"
+    },
+    {
+      "id": "search_roots",
+      "type": "text",
+      "name": "Search roots",
+      "description": "One absolute path (or ~ path) per line",
+      "default_value": "~"
+    },
+    {
+      "id": "exclude_patterns",
+      "type": "text",
+      "name": "Excluded names",
+      "description": "One fd glob per line",
+      "default_value": ".git\nnode_modules\n__pycache__\n.cache\nTrash"
+    },
+    {
+      "id": "include_hidden",
+      "type": "select",
+      "name": "Hidden files",
+      "description": "Whether to include dotfiles and hidden directories",
+      "default_value": "no",
+      "options": [
+        {"value": "no", "text": "Exclude hidden files"},
+        {"value": "yes", "text": "Include hidden files"}
+      ]
+    },
+    {
+      "id": "respect_gitignore",
+      "type": "select",
+      "name": "Respect ignore files",
+      "description": "Honor .gitignore, .ignore, and global ignore rules",
+      "default_value": "yes",
+      "options": [
+        {"value": "yes", "text": "Respect ignore files"},
+        {"value": "no", "text": "Search ignored files too"}
+      ]
+    },
+    {
+      "id": "result_type",
+      "type": "select",
+      "name": "Result type",
+      "description": "Choose whether to search files, folders, or both",
+      "default_value": "both",
+      "options": [
+        {"value": "both", "text": "Files and folders"},
+        {"value": "files", "text": "Files only"},
+        {"value": "folders", "text": "Folders only"}
+      ]
+    },
+    {
+      "id": "follow_symlinks",
+      "type": "select",
+      "name": "Follow symlinks",
+      "description": "Following symlinks can make indexing much larger",
+      "default_value": "no",
+      "options": [
+        {"value": "no", "text": "Do not follow symlinks"},
+        {"value": "yes", "text": "Follow symlinks"}
+      ]
+    },
+    {
+      "id": "max_results",
+      "type": "input",
+      "name": "Maximum results",
+      "description": "Between 1 and 30",
+      "default_value": "12"
+    },
+    {
+      "id": "min_query_length",
+      "type": "input",
+      "name": "Minimum query length",
+      "description": "Short queries can produce many matches",
+      "default_value": "2"
+    },
+    {
+      "id": "refresh_minutes",
+      "type": "input",
+      "name": "Index refresh interval",
+      "description": "Minutes between background index refreshes",
+      "default_value": "10"
+    },
+    {
+      "id": "max_index_entries",
+      "type": "input",
+      "name": "Maximum indexed entries",
+      "description": "Safety limit for very large directory trees",
+      "default_value": "200000"
+    }
+  ]
+}
